@@ -275,7 +275,7 @@
 
       <section>
         <h3>퍼널: 단계별 전환</h3>
-        <p class="sub">고유 사용자 기준, Mixpanel 클라이언트 이벤트</p>
+        <p class="sub">고유 사용자 기준, Mixpanel 클라이언트 이벤트 — 마지막 단계(결과 페이지 도달)는 리워드 지급 기준 참여완료(914명, Redash)와 측정 방식이 달라 수치가 소폭 낮게 잡힘</p>
         <div id="funnel"></div>
       </section>
 
@@ -334,7 +334,7 @@
     { label: '프로모션 페이지 진입', value: 2759, rate: null },
     { label: '차량번호 입력 (CTA 클릭)', value: 1192, rate: 43.2 },
     { label: '약관 동의 완료', value: 1037, rate: 87.0 },
-    { label: '참여 완료 (결과 페이지 도달)', value: 825, rate: 79.6 }
+    { label: '결과 페이지 도달', value: 825, rate: 79.6 }
   ];
   var max = funnel[0].value;
   var fEl = root.querySelector('#funnel');
