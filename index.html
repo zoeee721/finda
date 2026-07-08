@@ -280,7 +280,7 @@
       </section>
 
       <section>
-        <h3>is_own_car 순증 breakdown</h3>
+        <h3>차량번호 입력 순증 데이터</h3>
         <p class="sub">참여 완료자(리워드 지급 기준) 914명, 참여 이전 가장 최근 한도조회 기준 · Redash 조회</p>
         <div class="ctr-group">
           <div class="ctr-title">이미 차량보유 확인돼 있던 유저 (재확인)</div>
@@ -306,20 +306,14 @@
             <span class="ctr-bar-val mono" style="width:90px;">99명·10.8%</span>
           </div>
         </div>
-        <p class="sub" style="margin-top:0.8rem; margin-bottom:0;">리워드 지급자 중 77명은 초기엔 차량인증 DB 기록이 없어 데이터 정합성 이슈로 의심됐으나, 동의서 매핑 누락 사고(6/8 12:00–12:19)로 인증 증빙만 삭제된 정상 참여자로 확인되어 위 집계에 포함.</p>
-      </section>
-
-      <section>
-        <h3>운영 이슈</h3>
-        <ul class="issue-list">
-          <li><strong>동의서 매핑 누락 (해소됨).</strong> 06.08 12:00–12:19 (19분), 약관 바텀시트 미노출로 77명이 동의 없이 참여 완료. 개인정보 파기 조치 진행.</li>
-          <li><strong>입력·시스템 오류 팝업.</strong> 진입자 중 입력오류 팝업 204명(7.4%), 시스템오류 팝업 85명(3.1%) 노출.</li>
-        </ul>
       </section>
 
       <section style="margin-bottom:0;">
-        <h3>출처 및 방법론</h3>
-        <p class="footnote">「[26.04] 자동차 번호 입력 개선 제안」, PRD 「[26.04] 차번호 입력 프로모션」, 「[성과 및 회고] 차번호 입력 프로모션」, 「차번호 입력 프로모션 동의서 누락 건」(Confluence, space MD) · Mixpanel 프로젝트 Finda App 실측(PM_car_* 이벤트) · Redash(pcs.user_reward_history / user_challenge_reward_history, fcsdb.loan_promotion / la_application / la_application_userinput) 조회, 2026.07.08. "참여 완료"는 PRD 정의(리워드 지급 여부)에 따라 리워드 지급 기준(914명)으로 통일 — Mixpanel 결과페이지 view 기준(825~898명)과는 클라이언트/서버 측정 레이어 차이로 소폭 상이할 수 있음. is_own_car 순증은 "참여 이전 마지막 한도조회 시점" 기준이며, license_plate_number 공란이 "명시적 무보유 선택"이라는 전제를 따른다.</p>
+        <h3>운영 이슈</h3>
+        <ul class="issue-list">
+          <li><strong>동의서 매핑 누락.</strong> 동의서 매핑 누락으로 일부 참여자의 차량 인증 기록이 삭제되어, 참여자 식별 시 프로모션 참여 테이블 대신 리워드 지급 테이블을 조인해서 사용했다.</li>
+          <li><strong>입력·시스템 오류 팝업.</strong> 진입자 중 입력오류 팝업 204명(7.4%), 시스템오류 팝업 85명(3.1%) 노출.</li>
+        </ul>
       </section>
 
     </div>
