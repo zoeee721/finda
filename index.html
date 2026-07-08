@@ -9,7 +9,7 @@
   * { box-sizing: border-box; }
   html, body {
     margin: 0;
-    background: #E4E7E1;
+    background: #F1F1EF;
     min-height: 100vh;
   }
   body {
@@ -18,21 +18,18 @@
 </style>
 </head>
 <body>
-<h2 class="sr-only">차번호 입력 프로모션(주유권 추첨 이벤트) 성과 요약: 핵심 KPI 순증 144명(15.7%), 유입 채널 CTR 미달과 운영 중단 원인, 재개 여부 결정. 세부 지표는 펼쳐서 확인 가능.</h2>
+<h2 class="sr-only">차번호 입력 프로모션(주유권 추첨 이벤트) 요약: 배경과 목적, 진행 방식, 참여·전환·CTR 성과, 핵심 KPI(is_own_car) 순증 144명(15.7%). 세부 지표는 펼쳐서 확인 가능.</h2>
 <style>
   .car-promo-report {
-    --ink: #14231F;
-    --ink-soft: #435049;
-    --ink-mute: #6E7B73;
-    --paper: #EFF1EC;
+    --ink: #1C1D1B;
+    --ink-soft: #4A4B46;
+    --ink-mute: #7A7B76;
     --card: #FFFFFF;
-    --line: #DCE1D9;
-    --teal: #1B6753;
-    --teal-bg: #DCEAE3;
-    --rust: #A84B2C;
-    --rust-bg: #F3E0D5;
-    --amber: #96600E;
-    --amber-bg: #F1E4CD;
+    --line: #E2E2DE;
+    --teal: #1F6F5C;
+    --teal-bg: #E4EFEA;
+    --rust: #A64B2C;
+    --rust-bg: #F5E4DA;
     --font-sans: "Apple SD Gothic Neo", "Pretendard Variable", Pretendard,
       -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic",
       "Noto Sans KR", Roboto, Helvetica, Arial, sans-serif;
@@ -42,10 +39,10 @@
     font-size: 15px;
     line-height: 1.6;
     color: var(--ink);
-    background: var(--paper);
+    background: var(--card);
     padding: 2.25rem clamp(1.1rem, 4vw, 2.75rem) 3rem;
     border-radius: 16px;
-    max-width: 880px;
+    max-width: 860px;
     margin: 0 auto;
     -webkit-font-smoothing: antialiased;
     word-break: keep-all;
@@ -68,39 +65,43 @@
     text-transform: uppercase; margin: 0 0 0.5rem;
   }
   .car-promo-report h1 {
-    font-size: 26px; font-weight: 600; margin: 0 0 0.7rem; text-wrap: balance;
+    font-size: 25px; font-weight: 600; margin: 0 0 0.5rem; text-wrap: balance;
     letter-spacing: -0.005em; line-height: 1.35; color: var(--ink);
   }
-  .car-promo-report .meta-row {
-    display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 2rem;
-  }
   .car-promo-report .meta {
-    font-size: 13.5px; color: var(--ink-mute); line-height: 1.5;
+    font-size: 13.5px; color: var(--ink-mute); margin: 0 0 2.2rem; line-height: 1.5;
   }
-  .car-promo-report .status-pill {
-    font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px;
-    background: var(--rust-bg); color: var(--rust); flex-shrink: 0;
+  .car-promo-report section { margin-bottom: 2.2rem; }
+  .car-promo-report h2 {
+    font-size: 16.5px; font-weight: 600; margin: 0 0 0.75rem; color: var(--ink);
   }
+  .car-promo-report .prose p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; margin: 0 0 0.6rem; }
+  .car-promo-report .prose ul { margin: 0.4rem 0 0; padding-left: 1.15rem; }
+  .car-promo-report .prose li { font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 0.45rem; }
+  .car-promo-report .prose strong { color: var(--ink); font-weight: 600; }
 
   .car-promo-report .hero {
     background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 1.6rem 1.75rem; margin-bottom: 14px;
+    padding: 1.5rem 1.7rem; margin-bottom: 12px;
   }
   .car-promo-report .hero-label {
     font-size: 13.5px; font-weight: 500; color: var(--ink-soft); margin: 0 0 0.5rem;
   }
   .car-promo-report .hero-number {
-    font-size: 46px; font-weight: 600; letter-spacing: -0.01em; color: var(--rust);
+    font-size: 42px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink);
     line-height: 1; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
   }
-  .car-promo-report .hero-number .pct { font-size: 22px; color: var(--ink-mute); font-weight: 500; }
+  .car-promo-report .hero-number .pct {
+    font-size: 15px; font-weight: 500; color: var(--rust); background: var(--rust-bg);
+    padding: 3px 10px; border-radius: 20px;
+  }
   .car-promo-report .hero-desc {
-    font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; margin: 0.9rem 0 0; max-width: 620px;
+    font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin: 0.85rem 0 0; max-width: 600px;
   }
 
   .car-promo-report .chip-row {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 10px; margin-bottom: 28px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
   }
   .car-promo-report .chip {
     background: var(--card); border: 1px solid var(--line); border-radius: 12px;
@@ -110,39 +111,28 @@
     font-size: 12.5px; color: var(--ink-mute); margin: 0 0 0.4rem;
   }
   .car-promo-report .chip-value {
-    font-size: 19px; font-weight: 600; margin: 0; letter-spacing: -0.003em;
+    font-size: 20px; font-weight: 600; margin: 0; letter-spacing: -0.003em;
   }
-  .car-promo-report .chip-value.warn { color: var(--rust); }
-  .car-promo-report .chip-value.ok { color: var(--teal); }
   .car-promo-report .chip-note {
     font-size: 12.5px; color: var(--ink-soft); margin: 0.35rem 0 0; line-height: 1.45;
   }
 
-  .car-promo-report h2 {
-    font-size: 17px; font-weight: 600; margin: 0 0 0.7rem; color: var(--ink);
-  }
   .car-promo-report .chart-wrap {
     background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 1.3rem 1.3rem 0.8rem; margin-bottom: 28px;
+    padding: 1.3rem 1.3rem 1.1rem;
   }
-  .car-promo-report .chart-caption {
-    font-size: 13px; color: var(--ink-mute); margin: 0.8rem 0 0; line-height: 1.55;
+  .car-promo-report .ctr-group { margin-bottom: 1.3rem; }
+  .car-promo-report .ctr-title {
+    font-size: 13.5px; font-weight: 500; color: var(--ink-soft); margin-bottom: 8px;
   }
-
-  .car-promo-report .decision {
-    border: 1px solid var(--rust-bg); background: var(--rust-bg); border-radius: 12px;
-    padding: 1.15rem 1.3rem; margin-bottom: 8px;
-  }
-  .car-promo-report .decision-head {
-    font-size: 13px; font-weight: 600; color: var(--rust); text-transform: uppercase;
-    letter-spacing: 0.03em; margin: 0 0 0.5rem;
-  }
-  .car-promo-report .decision p {
-    font-size: 14.5px; color: var(--ink); line-height: 1.7; margin: 0;
-  }
+  .car-promo-report .ctr-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .car-promo-report .ctr-bar-tag { width: 44px; font-size: 12px; color: var(--ink-mute); flex-shrink: 0; }
+  .car-promo-report .ctr-bar-track { flex: 1; height: 13px; background: #F1F1EF; border: 1px solid var(--line); border-radius: 4px; }
+  .car-promo-report .ctr-bar-fill { height: 100%; border-radius: 4px; }
+  .car-promo-report .ctr-bar-val { width: 60px; text-align: right; font-size: 12.5px; font-weight: 500; flex-shrink: 0; }
 
   .car-promo-report details {
-    margin-top: 1.75rem; border-top: 1px solid var(--line); padding-top: 1.2rem;
+    margin-top: 0.6rem; border-top: 1px solid var(--line); padding-top: 1.2rem;
   }
   .car-promo-report summary {
     cursor: pointer; font-size: 14px; font-weight: 500; color: var(--teal);
@@ -154,7 +144,7 @@
   }
   .car-promo-report details[open] summary::before { transform: rotate(90deg); }
   .car-promo-report .detail-body { margin-top: 1.4rem; }
-  .car-promo-report .detail-body section { margin-bottom: 2.1rem; }
+  .car-promo-report .detail-body section { margin-bottom: 2rem; }
   .car-promo-report .detail-body h3 {
     font-size: 15px; font-weight: 600; margin: 0 0 0.3rem; color: var(--ink);
   }
@@ -169,7 +159,7 @@
   .car-promo-report .funnel-label { color: var(--ink-soft); }
   .car-promo-report .funnel-count { font-weight: 600; font-size: 15px; }
   .car-promo-report .funnel-track {
-    height: 24px; background: var(--paper); border: 1px solid var(--line);
+    height: 22px; background: #F1F1EF; border: 1px solid var(--line);
     border-radius: 6px; overflow: hidden;
   }
   .car-promo-report .funnel-fill {
@@ -178,117 +168,115 @@
   .car-promo-report .funnel-rate {
     font-size: 12px; color: var(--ink-mute); margin-top: 4px;
   }
-  .car-promo-report .ctr-group { margin-bottom: 1.3rem; }
-  .car-promo-report .ctr-title {
-    font-size: 13.5px; font-weight: 500; color: var(--ink-soft); margin-bottom: 8px;
-  }
-  .car-promo-report .ctr-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-  .car-promo-report .ctr-bar-tag { width: 44px; font-size: 12px; color: var(--ink-mute); flex-shrink: 0; }
-  .car-promo-report .ctr-bar-track { flex: 1; height: 13px; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; }
-  .car-promo-report .ctr-bar-fill { height: 100%; border-radius: 4px; }
-  .car-promo-report .ctr-bar-val { width: 92px; text-align: right; font-size: 12.5px; font-weight: 500; flex-shrink: 0; }
   .car-promo-report .issue-list { border-left: 2px solid var(--line); padding-left: 1rem; }
   .car-promo-report .issue-list li { margin-bottom: 0.9rem; font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
   .car-promo-report .issue-list strong { color: var(--ink); }
   .car-promo-report .footnote {
     font-size: 12px; color: var(--ink-mute); line-height: 1.7;
   }
-  .car-promo-report svg text { fill: var(--ink-mute); font-family: var(--font-sans); }
-  .car-promo-report .grid-line { stroke: var(--line); stroke-width: 1; }
-  .car-promo-report .axis-line { stroke: #B7BFB4; stroke-width: 1; }
 </style>
 
 <div class="car-promo-report">
 
-  <p class="eyebrow">Growth · 프로모션 성과 요약</p>
+  <p class="eyebrow">Growth · 프로모션 요약</p>
   <h1>차번호 입력 프로모션(주유권 추첨 이벤트)</h1>
-  <div class="meta-row">
-    <p class="meta">2026.06.08–06.15 운영 (계획 06.01–06.30) · 데이터 기준일 2026.07.08</p>
-    <span class="status-pill">시스템 오류로 8일째 중단 · 재개 결정 대기</span>
-  </div>
+  <p class="meta">계획 기간 2026.06.01–06.30 · 실제 운영 06.08–06.15 · 데이터 기준일 2026.07.08</p>
 
-  <div class="hero">
-    <p class="hero-label">핵심 KPI — 신규로 확인된 차량보유자 (is_own_car 순증)</p>
-    <p class="hero-number mono">144<span class="unit" style="font-size:22px;">명</span><span class="pct mono">15.7%</span></p>
-    <p class="hero-desc">참여 완료자 914명 중 770명(84%)은 이미 알고 있던 차량보유자의 재확인이었고, 새로 확인된 건 144명뿐. "차량 정보 미입력 유저의 입력 유도"라는 이 프로모션의 원래 목표 기준으로 보면 실질 성과는 참여 규모보다 훨씬 작다.</p>
-  </div>
-
-  <div class="chip-row">
-    <div class="chip">
-      <p class="chip-label">참여 완료</p>
-      <p class="chip-value mono">914<span class="unit" style="font-size:14px;">명</span></p>
-      <p class="chip-note">목표 7,022명의 13%</p>
+  <section>
+    <h2>배경 및 목적</h2>
+    <div class="prose">
+      <p>한도조회 퍼널 내부에서 차량번호 등 정보 입력 단계의 이탈이 발생하고 있었다. 한도조회 시작(intro CTA 클릭)부터 정보입력 완료까지 <strong>약 12.22%(약 2.1만 명)</strong>가 이탈했고, 인트로 view부터 가승인 완료까지는 <strong>약 29.25%</strong>가 이탈했다(4/21 기준 D30).</p>
+      <p>차량 정보를 입력한 유저는 입력하지 않은 유저보다 이후 행동에서 뚜렷한 차이를 보였다 — 대출결과 목록→상세 진입 전환율 <strong>33% vs 53%</strong>, 상세→신청 전환율 <strong>21% vs 31%</strong>. 또한 차량번호 미입력 유저 중 <strong>약 25~45%</strong>는 실제로 차량을 보유하고 있을 것으로 추정됐다(국토교통부 등록대수 기준 추정).</p>
+      <p><strong>이 프로모션으로 확인하고자 한 것:</strong> 한도조회 퍼널 외부에서 혜택을 계기로 차량 정보를 입력받는 구조가 실제로 작동하는지, 그리고 그렇게 입력된 정보가 이후 한도조회 등 핵심 행동으로 이어지는지.</p>
     </div>
-    <div class="chip">
-      <p class="chip-label">유입 CTR (CRM·배너)</p>
-      <p class="chip-value warn mono">0.17 / 2.4<span class="unit" style="font-size:14px;">%</span></p>
-      <p class="chip-note">목표(0.64% / 11.2%)의 4~5배 낮음</p>
-    </div>
-    <div class="chip">
-      <p class="chip-label">온페이지 전환</p>
-      <p class="chip-value ok mono">29.9<span class="unit" style="font-size:14px;">%</span></p>
-      <p class="chip-note">목표 20.8% 초과 — 구조 자체는 유효</p>
-    </div>
-  </div>
+  </section>
 
-  <h2>왜 참여 규모가 작았나</h2>
-  <div class="chart-wrap">
-    <svg id="trend" viewBox="0 0 940 280" style="width:100%; height:auto; display:block;" role="img" aria-label="일별 프로모션 페이지 진입 추이. 6월 8일 1174명으로 시작해 6월 15일 280명까지 완만히 감소한 뒤, 6월 16일부터는 0에 가까운 수준으로 급락하여 이후 회복되지 않음"></svg>
-    <p class="chart-caption">유입 채널 CTR이 목표치에 크게 못 미친 상태에서, 6/16부터 시스템 오류로 트래픽이 사실상 멈췄다. 계획된 30일 중 실제 운영은 8일(27%)뿐.</p>
-  </div>
+  <section>
+    <h2>진행 방식</h2>
+    <div class="prose">
+      <ul>
+        <li><strong>대상 및 유입:</strong> 핀다 전체 회원. CRM 오픈 푸시(마수동 전체) + 스마트배너(전체 유저) + 핀다소식탭</li>
+        <li><strong>참여 플로우:</strong> 프로모션 페이지 진입 → 차량번호 입력 → NICE 디앤알 본인명의 인증 → 약관 동의 → 추첨 → 결과 확인 → 한도조회 유도</li>
+        <li><strong>리워드:</strong> 추첨을 통해 GS칼텍스 주유권 1만 원 50명(당첨 확률 0.75%) + 미당첨자 랜덤 포인트 지급</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="decision">
-    <p class="decision-head">결정 필요</p>
-    <p>재개 여부. 원인 조치 후 잔여 기간(또는 신규 기간)으로 다시 열 것인지, 8일 운영분으로 종료 처리할 것인지에 따라 최종 참여 규모와 예산 소진이 달라진다.</p>
-  </div>
+  <section>
+    <h2>핵심 성과</h2>
+    <div class="hero">
+      <p class="hero-label">핵심 KPI — is_own_car 순증 (신규로 확인된 차량보유자)</p>
+      <p class="hero-number mono">144<span class="unit" style="font-size:20px;">명</span><span class="pct mono">참여자의 15.7%</span></p>
+      <p class="hero-desc">참여 완료자 914명 중 770명(84.2%)은 참여 이전 한도조회에서 이미 차량 보유가 확인된 유저였고, 나머지 144명(15.7%)은 이번 프로모션을 통해 새로 확인됐다.</p>
+    </div>
+    <div class="chip-row">
+      <div class="chip">
+        <p class="chip-label">참여 완료</p>
+        <p class="chip-value mono">914<span class="unit" style="font-size:14px;">명</span></p>
+        <p class="chip-note">목표 7,022명 대비 13.0%</p>
+      </div>
+      <div class="chip">
+        <p class="chip-label">진입 → 참여완료 CVR</p>
+        <p class="chip-value mono">29.9<span class="unit" style="font-size:14px;">%</span></p>
+        <p class="chip-note">목표 20.8%</p>
+      </div>
+      <div class="chip">
+        <p class="chip-label">결과페이지 → 한도조회 CVR</p>
+        <p class="chip-value mono">27.2<span class="unit" style="font-size:14px;">%</span></p>
+        <p class="chip-note">결과페이지 915명 중 249명</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>유입 채널 CTR: 목표 대비 실적</h2>
+    <p class="sub">2026.06.08–06.15 발송/노출 기준 (Tableau 집계)</p>
+    <div class="chart-wrap">
+      <div class="ctr-group">
+        <div class="ctr-title">CRM 오픈 푸시 (655,887건 발송)</div>
+        <div class="ctr-bar-row">
+          <span class="ctr-bar-tag">목표</span>
+          <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:5.3%; background:#C7C7C2;"></div></div>
+          <span class="ctr-bar-val mono">0.64%</span>
+        </div>
+        <div class="ctr-bar-row">
+          <span class="ctr-bar-tag">실적</span>
+          <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:1.4%; background:var(--rust);"></div></div>
+          <span class="ctr-bar-val mono">0.17%</span>
+        </div>
+      </div>
+      <div class="ctr-group">
+        <div class="ctr-title">스마트배너 (평균, 대고객·차량보유 노출)</div>
+        <div class="ctr-bar-row">
+          <span class="ctr-bar-tag">목표</span>
+          <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:93%; background:#C7C7C2;"></div></div>
+          <span class="ctr-bar-val mono">11.2%</span>
+        </div>
+        <div class="ctr-bar-row">
+          <span class="ctr-bar-tag">실적</span>
+          <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:20%; background:var(--rust);"></div></div>
+          <span class="ctr-bar-val mono">2.4%</span>
+        </div>
+      </div>
+      <div class="ctr-group" style="margin-bottom:0;">
+        <div class="ctr-title">핀다소식탭 (목표 미설정, 참고용)</div>
+        <div class="ctr-bar-row">
+          <span class="ctr-bar-tag">실적</span>
+          <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:6.7%; background:var(--ink-mute);"></div></div>
+          <span class="ctr-bar-val mono">0.80%</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <details>
-    <summary>세부 지표 및 조사 과정 보기</summary>
+    <summary>세부 지표 보기</summary>
     <div class="detail-body">
 
       <section>
-        <h3>퍼널: 어디서 이탈했나</h3>
+        <h3>퍼널: 단계별 전환</h3>
         <p class="sub">고유 사용자 기준, Mixpanel 클라이언트 이벤트</p>
         <div id="funnel"></div>
-      </section>
-
-      <section>
-        <h3>유입 채널 CTR: 목표 대비 실적</h3>
-        <p class="sub">2026.06.08–06.15 발송/노출 기준 (Tableau 집계)</p>
-        <div class="ctr-group">
-          <div class="ctr-title">CRM 오픈 푸시 (655,887건 발송)</div>
-          <div class="ctr-bar-row">
-            <span class="ctr-bar-tag">목표</span>
-            <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:5.3%; background:var(--line);"></div></div>
-            <span class="ctr-bar-val mono">0.64%</span>
-          </div>
-          <div class="ctr-bar-row">
-            <span class="ctr-bar-tag">실적</span>
-            <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:1.4%; background:var(--rust);"></div></div>
-            <span class="ctr-bar-val mono">0.17%</span>
-          </div>
-        </div>
-        <div class="ctr-group">
-          <div class="ctr-title">스마트배너 (평균, 대고객·차량보유 노출)</div>
-          <div class="ctr-bar-row">
-            <span class="ctr-bar-tag">목표</span>
-            <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:93%; background:var(--line);"></div></div>
-            <span class="ctr-bar-val mono">11.2%</span>
-          </div>
-          <div class="ctr-bar-row">
-            <span class="ctr-bar-tag">실적</span>
-            <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:20%; background:var(--rust);"></div></div>
-            <span class="ctr-bar-val mono">2.4%</span>
-          </div>
-        </div>
-        <div class="ctr-group" style="margin-bottom:0;">
-          <div class="ctr-title">핀다소식탭 (목표 미설정, 참고용)</div>
-          <div class="ctr-bar-row">
-            <span class="ctr-bar-tag">실적</span>
-            <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:6.7%; background:var(--ink-mute);"></div></div>
-            <span class="ctr-bar-val mono">0.80%</span>
-          </div>
-        </div>
       </section>
 
       <section>
@@ -299,7 +287,7 @@
           <div class="ctr-bar-row">
             <span class="ctr-bar-tag" style="width:150px;">HAD_CAR</span>
             <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:84.2%; background:var(--ink-mute);"></div></div>
-            <span class="ctr-bar-val mono">770명·84.2%</span>
+            <span class="ctr-bar-val mono" style="width:90px;">770명·84.2%</span>
           </div>
         </div>
         <div class="ctr-group">
@@ -307,7 +295,7 @@
           <div class="ctr-bar-row">
             <span class="ctr-bar-tag" style="width:150px;">NO_USERINPUT</span>
             <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:4.9%; background:var(--teal);"></div></div>
-            <span class="ctr-bar-val mono">45명·4.9%</span>
+            <span class="ctr-bar-val mono" style="width:90px;">45명·4.9%</span>
           </div>
         </div>
         <div class="ctr-group" style="margin-bottom:0;">
@@ -315,7 +303,7 @@
           <div class="ctr-bar-row">
             <span class="ctr-bar-tag" style="width:150px;">SELECTED_NO_CAR</span>
             <div class="ctr-bar-track"><div class="ctr-bar-fill" style="width:10.8%; background:var(--teal);"></div></div>
-            <span class="ctr-bar-val mono">99명·10.8%</span>
+            <span class="ctr-bar-val mono" style="width:90px;">99명·10.8%</span>
           </div>
         </div>
         <p class="sub" style="margin-top:0.8rem; margin-bottom:0;">리워드 지급자 중 77명은 초기엔 차량인증 DB 기록이 없어 데이터 정합성 이슈로 의심됐으나, 동의서 매핑 누락 사고(6/8 12:00–12:19)로 인증 증빙만 삭제된 정상 참여자로 확인되어 위 집계에 포함.</p>
@@ -324,14 +312,14 @@
       <section>
         <h3>운영 이슈</h3>
         <ul class="issue-list">
-          <li><strong>동의서 매핑 누락 (해소됨).</strong> 06.08 12:00–12:19 (19분), 약관 바텀시트 미노출로 77명이 동의 없이 참여 완료. 개인정보 파기 조치 진행. 재발방지: 동의서 미매핑 시 플로우 차단 로직 필요.</li>
-          <li><strong>입력·시스템 오류 팝업.</strong> 진입자 중 입력오류 팝업 204명(7.4%), 시스템오류 팝업 85명(3.1%) 노출. 차량번호 유효성 검증 UX 재점검 여지.</li>
+          <li><strong>동의서 매핑 누락 (해소됨).</strong> 06.08 12:00–12:19 (19분), 약관 바텀시트 미노출로 77명이 동의 없이 참여 완료. 개인정보 파기 조치 진행.</li>
+          <li><strong>입력·시스템 오류 팝업.</strong> 진입자 중 입력오류 팝업 204명(7.4%), 시스템오류 팝업 85명(3.1%) 노출.</li>
         </ul>
       </section>
 
       <section style="margin-bottom:0;">
         <h3>출처 및 방법론</h3>
-        <p class="footnote">PRD 「[26.04] 차번호 입력 프로모션」, 「[성과 및 회고] 차번호 입력 프로모션」, 「차번호 입력 프로모션 동의서 누락 건」(Confluence, space MD) · Mixpanel 프로젝트 Finda App 실측(PM_car_* 이벤트) · Redash(pcs.user_reward_history / user_challenge_reward_history, fcsdb.loan_promotion / la_application / la_application_userinput) 조회, 2026.07.08. "참여 완료"는 PRD 정의(리워드 지급 여부)에 따라 리워드 지급 기준(914명)으로 통일 — Mixpanel 결과페이지 view 기준(825~898명)과는 클라이언트/서버 측정 레이어 차이로 소폭 상이할 수 있음. is_own_car 순증은 "참여 이전 마지막 한도조회 시점" 기준이며, license_plate_number 공란이 "명시적 무보유 선택"이라는 전제를 따른다.</p>
+        <p class="footnote">「[26.04] 자동차 번호 입력 개선 제안」, PRD 「[26.04] 차번호 입력 프로모션」, 「[성과 및 회고] 차번호 입력 프로모션」, 「차번호 입력 프로모션 동의서 누락 건」(Confluence, space MD) · Mixpanel 프로젝트 Finda App 실측(PM_car_* 이벤트) · Redash(pcs.user_reward_history / user_challenge_reward_history, fcsdb.loan_promotion / la_application / la_application_userinput) 조회, 2026.07.08. "참여 완료"는 PRD 정의(리워드 지급 여부)에 따라 리워드 지급 기준(914명)으로 통일 — Mixpanel 결과페이지 view 기준(825~898명)과는 클라이언트/서버 측정 레이어 차이로 소폭 상이할 수 있음. is_own_car 순증은 "참여 이전 마지막 한도조회 시점" 기준이며, license_plate_number 공란이 "명시적 무보유 선택"이라는 전제를 따른다.</p>
       </section>
 
     </div>
@@ -365,72 +353,6 @@
       fEl.appendChild(row);
     });
   }
-
-  var dates = [];
-  var start = new Date(2026, 5, 1);
-  for (var i = 0; i < 37; i++) {
-    var d = new Date(start);
-    d.setDate(start.getDate() + i);
-    dates.push((d.getMonth() + 1) + '/' + d.getDate());
-  }
-  var data = [0,0,0,0,2,0,0,1174,698,567,495,335,280,278,280,2,0,2,0,0,0,1,0,1,1,1,0,0,0,1,0,0,0,0,0,1,0];
-
-  var svg = root.querySelector('#trend');
-  var W = 940, H = 280, padL = 46, padR = 14, padT = 16, padB = 34;
-  var plotW = W - padL - padR, plotH = H - padT - padB;
-  var yMax = 1200;
-  var n = data.length;
-  var xStep = plotW / (n - 1);
-
-  function xAt(i) { return padL + i * xStep; }
-  function yAt(v) { return padT + (1 - v / yMax) * plotH; }
-
-  var ns = 'http://www.w3.org/2000/svg';
-  function el(tag, attrs) {
-    var e = document.createElementNS(ns, tag);
-    for (var k in attrs) e.setAttribute(k, attrs[k]);
-    return e;
-  }
-
-  var gridVals = [0, 300, 600, 900, 1200];
-  gridVals.forEach(function (v) {
-    var y = yAt(v);
-    svg.appendChild(el('line', { x1: padL, x2: W - padR, y1: y, y2: y, class: 'grid-line' }));
-    var t = el('text', { x: padL - 8, y: y + 4, 'text-anchor': 'end', 'font-size': 11 });
-    t.textContent = v;
-    svg.appendChild(t);
-  });
-
-  var cutoffIdx = 15;
-  var cutoffX = xAt(cutoffIdx);
-  svg.appendChild(el('line', { x1: cutoffX, x2: cutoffX, y1: padT, y2: H - padB, stroke: '#B4502E', 'stroke-width': 1, 'stroke-dasharray': '4,3' }));
-  var cutoffLabel = el('text', { x: cutoffX + 6, y: padT + 12, 'font-size': 11.5, fill: '#B4502E' });
-  cutoffLabel.textContent = '6/16부터 트래픽 소멸';
-  svg.appendChild(cutoffLabel);
-
-  var pathD = '';
-  data.forEach(function (v, i) {
-    var x = xAt(i), y = yAt(v);
-    pathD += (i === 0 ? 'M' : 'L') + x + ',' + y + ' ';
-  });
-  var areaD = pathD + 'L' + xAt(n - 1) + ',' + (H - padB) + ' L' + xAt(0) + ',' + (H - padB) + ' Z';
-
-  svg.appendChild(el('path', { d: areaD, fill: '#1F6F5C', opacity: '0.1', stroke: 'none' }));
-  svg.appendChild(el('path', { d: pathD, fill: 'none', stroke: '#1F6F5C', 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
-
-  var peakIdx = data.indexOf(Math.max.apply(null, data));
-  svg.appendChild(el('circle', { cx: xAt(peakIdx), cy: yAt(data[peakIdx]), r: 4.5, fill: '#1F6F5C', stroke: '#FBFCFA', 'stroke-width': 2 }));
-  var peakLabel = el('text', { x: xAt(peakIdx), y: yAt(data[peakIdx]) - 10, 'font-size': 11.5, 'text-anchor': 'middle', fill: '#14231F' });
-  peakLabel.textContent = '6/8 · 1,174';
-  svg.appendChild(peakLabel);
-
-  svg.appendChild(el('line', { x1: padL, x2: W - padR, y1: H - padB, y2: H - padB, class: 'axis-line' }));
-  [0, 7, 14, 21, 28, 36].forEach(function (i) {
-    var x = xAt(i);
-    var t = el('text', { x: x, y: H - padB + 18, 'font-size': 11, 'text-anchor': 'middle' });
-    t.textContent = dates[i];
-    svg.appendChild(t);
-  });
 })();
 </script>
 </body>
